@@ -1,0 +1,29 @@
+<mat-toolbar class="top-navbar" color="primary" fxHide fxShow.gt-xs>
+    <div>
+        <button mat-button routerLink="/astrophotography">
+            <h2>WeAreStarDust</h2>
+        </button>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <div *ngIf="astrophotographyIsActive; else astrophotographyNotRaised">
+            <button mat-raised-button>Astrophotography</button>
+        </div>
+        <ng-template #astrophotographyNotRaised>
+            <button mat-button routerLink="/astrophotography">Astrophotography</button>
+        </ng-template>
+    </div>
+</mat-toolbar>
+<mat-toolbar class="bottom-navbar" color="primary" fxHide fxShow.xs>
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-evenly center">
+        <div 
+            class="icon-item-inner-container"
+            routerLink="/astrophotography"
+            matRipple
+            [matRippleCentered]="true"
+            [matRippleUnbounded]="true"
+        >
+        <mat-icon color="{{ astrophotographyIsActive ? 'accent' : null }}">insert_photo</mat-icon>
+        <span class="font-size10">Astrophotography</span>
+        </div>
+    </div>
+</mat-toolbar>

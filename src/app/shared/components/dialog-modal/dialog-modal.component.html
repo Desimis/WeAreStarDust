@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row justify-content-end">
+        <button (click)="onCloseClick()" mat-icon-button aria-label="close">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <div *ngIf="data && data.type === 'image'">
+            <div class="row justify-content-center">
+                <img src="{{data.data}}" style="max-width: 1200px; max-height: 1200px;" alt="astro photo of the day">
+            </div>
+    </div>
+</div>
+
